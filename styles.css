@@ -1,3 +1,7 @@
+body{
+    background-color: #6A6B83;
+}
+
 .header{
     display: flex; 
     justify-content: center;
@@ -15,13 +19,26 @@
 .calculator{
     display: flex; 
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     background-color: grey;
+    background-color: #395B50;
+    padding: 15px; 
+    border-radius: 30px;
 }
 
+.display-container{
+    background-color: #1F2F16;
+    padding: 10px;
+    width: 100%;  
+    border-radius: 20px; 
+    margin-bottom: 15px; 
+}
 .display{
-    align-self: flex-end;
+    padding: 5px; 
+    text-align: right;
     font-size: 36px; 
+    background-color: #C5D1EB;
+    border-radius: 10px;
 }
 
 .button-row{
@@ -33,4 +50,13 @@
     font-size: 36px;
     width: 60px; 
     border-radius: 20px;
+    margin: 3px; 
+}
+
+.num-button{
+    background-color: #92AFD7;
+}
+
+.op-button{
+    background-color: #5A7684;
 }
