@@ -60,3 +60,12 @@ body{
 .op-button{
     background-color: #5A7684;
 }
+
+button:hover{
+    background-color: #F9DB6D;
+}
+
+button:active{
+    background-color: #F9DB6D;
+    transform: translateY(2px);
+}
