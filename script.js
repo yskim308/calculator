@@ -19,6 +19,12 @@ function calculate(num1, value, operator){
     return calculated; 
 }
 
+function fuckOff(string){
+    num = parseFloat(string); 
+    roundedNum = Math.round(num * 1000)/1000; 
+    return roundedNum.toString(); 
+}
+
 let num1="";  
 let value = ""; 
 let calculated = ""
@@ -59,7 +65,7 @@ buttons.forEach((button) =>{
                     calculated = calculate(num1, value, operator);
                     operator = button.id;  
                 }
-                display.textContent = calculated; 
+                display.textContent = fuckOff(calculated); 
                 num1 = calculated; 
                 value="";
             }
