@@ -12,6 +12,9 @@ function calculate(num1, value, operator){
         case "/":
             calculated = parseFloat(num1) / parseFloat(value); 
             break;
+        case "%":
+            calculated = parseFloat(value) * 0.01 * parseFloat(num1)
+
     }
     return calculated; 
 }
@@ -24,8 +27,18 @@ let buttons = document.querySelectorAll(".op-button, .num-button");
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let display = document.querySelector(".display"); 
-        if (button.className == "num-button"){
-            value += button.id; 
+        if (button.id == "C"){
+            num1 = ""; 
+            value = ""; 
+            display.textContent = "0";  
+        }
+        else if (button.className == "num-button"){
+            if (button.id == "minus"){
+                value = "-" + value; 
+            }
+            else {
+                value += button.id; 
+            }
             display.textContent = value;  
         }
         else { //when oeprator is pressed 
@@ -39,10 +52,10 @@ buttons.forEach((button) =>{
             }
             else if (value!=""){
                 if (button.id == "=")
-                {
+                {//don't save the equals operator 
                     calculated = calculate(num1, value, operator);    
                 }
-                else{
+                else{//save the operator that is pressed 
                     calculated = calculate(num1, value, operator);
                     operator = button.id;  
                 }
